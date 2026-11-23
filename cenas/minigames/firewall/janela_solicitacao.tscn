@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://jblmn8adjtlo"]
+
+[ext_resource type="Script" uid="uid://cddx2jstr0sgf" path="res://codigos/minigames/firewall/janela_solicitacao.gd" id="1_lhy6r"]
+[ext_resource type="Texture2D" uid="uid://dxp6ykqeau7fq" path="res://sprites/desktop/button confirm.png" id="2_iva60"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="2_iyy68"]
+[ext_resource type="Texture2D" uid="uid://cn4hllqnnmdv6" path="res://sprites/desktop/button x.png" id="3_iyy68"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mo76"]
+bg_color = Color(0.83137256, 0.8156863, 0.78431374, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbunc"]
+bg_color = Color(0.39215687, 0.38431373, 0.37254903, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mon5"]
+bg_color = Color(0, 0, 0.5019608, 1)
+
+[node name="JanelaSolicitacao" type="PanelContainer" unique_id=1058460002]
+offset_right = 409.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4mo76")
+script = ExtResource("1_lhy6r")
+
+[node name="Margem" type="MarginContainer" parent="." unique_id=921749051]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="Margem" unique_id=688345753]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tbunc")
+
+[node name="Conteudo" type="VBoxContainer" parent="Margem" unique_id=1098790991]
+layout_mode = 2
+alignment = 1
+
+[node name="BarraTitulo" type="PanelContainer" parent="Margem/Conteudo" unique_id=1424757080]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margem/Conteudo/BarraTitulo" unique_id=1738674449]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iyy68")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_1mon5")
+text = "Nova Solicitação!"
+horizontal_alignment = 1
+
+[node name="LabelAplicacao" type="Label" parent="Margem/Conteudo" unique_id=475080447]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iyy68")
+theme_override_font_sizes/font_size = 45
+text = "Webcam"
+horizontal_alignment = 1
+
+[node name="LabelDesejaAcessar" type="Label" parent="Margem/Conteudo" unique_id=106772440]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iyy68")
+theme_override_font_sizes/font_size = 40
+text = "deseja acessar:"
+horizontal_alignment = 1
+
+[node name="LabelDescricao" type="Label" parent="Margem/Conteudo" unique_id=1155643079]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iyy68")
+theme_override_font_sizes/font_size = 45
+text = "Microfone"
+horizontal_alignment = 1
+
+[node name="LabelTimer" type="Label" parent="Margem/Conteudo" unique_id=101677903]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iyy68")
+theme_override_font_sizes/font_size = 45
+text = "8s"
+horizontal_alignment = 1
+
+[node name="Botoes" type="HBoxContainer" parent="Margem/Conteudo" unique_id=1259652759]
+layout_mode = 2
+alignment = 1
+
+[node name="BotaoPermitir" type="TextureButton" parent="Margem/Conteudo/Botoes" unique_id=250576686]
+custom_minimum_size = Vector2(10, 32)
+layout_mode = 2
+texture_normal = ExtResource("2_iva60")
+
+[node name="BotaoRecusar" type="TextureButton" parent="Margem/Conteudo/Botoes" unique_id=1427011118]
+custom_minimum_size = Vector2(10, 32)
+layout_mode = 2
+texture_normal = ExtResource("3_iyy68")
+
+[node name="TimerSolicitacao" type="Timer" parent="." unique_id=627902694]
+wait_time = 8.0
+one_shot = true

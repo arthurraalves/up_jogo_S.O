@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://bw3b2hoa8wk5y"]
+
+[ext_resource type="Script" uid="uid://bl37gud5m4k5t" path="res://codigos/minigames/caça arquivos/caca_arquivos.gd" id="1_fhi10"]
+[ext_resource type="Texture2D" uid="uid://v3ec4osr3tmy" path="res://sprites/desktop/icones/file_icons.png" id="2_2tywf"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_2tywf"]
+[ext_resource type="PackedScene" uid="uid://bko6re7rfwa5o" path="res://cenas/minigames/caça arquivos/prompt_windows98.tscn" id="4_36wbj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tywf"]
+atlas = ExtResource("2_2tywf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36wbj"]
+atlas = ExtResource("2_2tywf")
+region = Rect2(33.15663, 32.771175, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axmfc"]
+atlas = ExtResource("2_2tywf")
+region = Rect2(33.15663, 32.771175, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wdxl"]
+atlas = ExtResource("2_2tywf")
+region = Rect2(33.15663, 32.771175, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewpwv"]
+atlas = ExtResource("2_2tywf")
+region = Rect2(33.15663, 32.771175, 32, 32)
+
+[node name="CacaArquivos" type="Control" unique_id=1044821151]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -9.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fhi10")
+icone_arquivo = SubResource("AtlasTexture_2tywf")
+
+[node name="JanelaArquivos" type="PanelContainer" parent="." unique_id=646625407]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Conteudo" type="VBoxContainer" parent="JanelaArquivos" unique_id=972306933]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="BarraTitulo" type="HBoxContainer" parent="JanelaArquivos/Conteudo" unique_id=782631180]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="JanelaArquivos/Conteudo/BarraTitulo" unique_id=204741533]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 80
+text = "Caça-Arquivos"
+horizontal_alignment = 1
+
+[node name="Missao" type="RichTextLabel" parent="JanelaArquivos/Conteudo" unique_id=1412845470]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_2tywf")
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = " [b][font_size=26]Missão:[/font_size][/b] Faça a instalação do backup [b][font_size=22]config.sys.bak[/font_size][/b] e repare o arquivo [b][font_size=22]config.sys[/font_size][/b] para recuperar o computador."
+fit_content = true
+
+[node name="BarraCaminho" type="HBoxContainer" parent="JanelaArquivos/Conteudo" unique_id=1325446545]
+layout_mode = 2
+
+[node name="RotuloCaminho" type="Label" parent="JanelaArquivos/Conteudo/BarraCaminho" unique_id=1916155570]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 36
+text = " Local:"
+
+[node name="CaminhoAtual" type="Label" parent="JanelaArquivos/Conteudo/BarraCaminho" unique_id=322562435]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 37
+text = "C:\\"
+
+[node name="Voltar" type="Button" parent="JanelaArquivos/Conteudo" unique_id=1349358550]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 35
+text = "<- Voltar"
+
+[node name="ListaPastas" type="GridContainer" parent="JanelaArquivos/Conteudo" unique_id=1713506377]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 4
+
+[node name="Windows" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=1176372947]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+text = "Windows"
+icon = SubResource("AtlasTexture_36wbj")
+
+[node name="Users" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=317589632]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+text = "Users"
+icon = SubResource("AtlasTexture_axmfc")
+
+[node name="Program Files" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=530006210]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+text = "Program Files"
+icon = SubResource("AtlasTexture_3wdxl")
+
+[node name="Temp" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=516493807]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+text = "Recovery"
+icon = SubResource("AtlasTexture_ewpwv")
+
+[node name="VoltarDesktop" type="Button" parent="JanelaArquivos" unique_id=1434854329]
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 43
+text = "Voltar à área de trabalho"
+
+[node name="CamadaPrompt" type="CenterContainer" parent="." unique_id=70176147]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PromptWindows98" parent="CamadaPrompt" unique_id=1058460002 instance=ExtResource("4_36wbj")]
+layout_mode = 2
+
+[connection signal="pressed" from="JanelaArquivos/Conteudo/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Windows" to="." method="_on_windows_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Users" to="." method="_on_users_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Program Files" to="." method="_on_program_files_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Temp" to="." method="_on_temp_pressed"]
+[connection signal="pressed" from="JanelaArquivos/VoltarDesktop" to="." method="_on_voltar_desktop_pressed"]

@@ -1,0 +1,577 @@
+[gd_scene format=3 uid="uid://cf333muffdx1p"]
+
+[ext_resource type="Script" uid="uid://xag88t6x63fv" path="res://codigos/menu_principal.gd" id="1_ck6fg"]
+[ext_resource type="PackedScene" uid="uid://djp0hubtbpvvr" path="res://cenario.glb" id="2_5xvxb"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_4n3ki"]
+[ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="4_dsa2e"]
+[ext_resource type="AudioStream" uid="uid://b652xtr8vwtcw" path="res://musicas/WAV_Moments.wav" id="4_ystp5"]
+[ext_resource type="Script" uid="uid://cx2giuqxi1hay" path="res://cenas/menu_principal/volume_audio.gd" id="6_wnitp"]
+[ext_resource type="Texture2D" uid="uid://kch7jk5vt5rb" path="res://sprites/desktop/CloseRegular.png" id="7_pphy0"]
+[ext_resource type="Script" uid="uid://26m43vyisr7" path="res://cenas/menu_principal/botao_tela_cheia.gd" id="7_ystp5"]
+[ext_resource type="Texture2D" uid="uid://exxf00s6bs6s" path="res://sprites/desktop/ClosePressed.png" id="8_wnitp"]
+[ext_resource type="Texture2D" uid="uid://drfgcrjhgxr45" path="res://sprites/desktop/Window_Base.png" id="9_ystp5"]
+[ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="10_dsa2e"]
+[ext_resource type="Texture2D" uid="uid://cn4hllqnnmdv6" path="res://sprites/desktop/button x.png" id="11_g28pe"]
+[ext_resource type="AudioStream" uid="uid://dsx0us83fn2uf" path="res://efeitos sonoros/firewall/arnav_geddada-ui-sound-374228.mp3" id="12_wnitp"]
+[ext_resource type="AudioStream" uid="uid://ctvdb6xg0r2gj" path="res://efeitos sonoros/litupsubway-ui-close-sfx-513359.mp3" id="13_ystp5"]
+[ext_resource type="AudioStream" uid="uid://ddfwqy4p7vnsn" path="res://efeitos sonoros/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="15_g28pe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dsa2e"]
+texture = ExtResource("4_dsa2e")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="Animation" id="Animation_5xvxb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-175.40643, 25.759771, -1292.0063)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.007930457, 2.1411108e-06, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ck6fg"]
+resource_name = "zoom_monitor"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-175.40643, 25.759771, -1292.0063), Vector3(-169.89145, 29.209547, -1361.9895)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.007930457, 2.1411108e-06, 0), Vector3(0.057517882, -0.026172077, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1qcsy"]
+_data = {
+&"RESET": SubResource("Animation_5xvxb"),
+&"zoom_monitor": SubResource("Animation_ck6fg")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i0hcw"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ijetr"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oncfw"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pphy0"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wnitp"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ystp5"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_dsa2e"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g28pe"]
+bg_color = Color(0.5388762, 0.6314932, 0.97940415, 1)
+
+[node name="menu_principal" type="Control" unique_id=507066232]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ck6fg")
+
+[node name="painel_principal" type="Panel" parent="." unique_id=1040301984]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1926673203]
+
+[node name="cenario" parent="Node3D" unique_id=1672619187 instance=ExtResource("2_5xvxb")]
+transform = Transform3D(19.99992, 0.035920925, 0.044655558, -0.032796223, 19.953533, -1.3621483, -0.046998296, 1.3620696, 19.953512, -153.86513, 0, -1398.761)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D" unique_id=1794795631]
+light_energy = 0.15
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=332718095]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1179396103]
+handle_input_locally = false
+msaa_2d = 3
+msaa_3d = 3
+use_taa = true
+use_debanding = true
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1927677626]
+transform = Transform3D(0.99999994, -1.6979806e-08, 2.141043e-06, 0, 0.9999683, 0.007930372, -2.1411106e-06, -0.007930372, 0.9999683, -175.40643, 25.759771, -1292.0063)
+current = true
+fov = 60.0
+
+[node name="botoes_principais" type="VBoxContainer" parent="." unique_id=786962666]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 504.0
+offset_top = -133.0
+offset_right = 870.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="novo_jogo" type="Button" parent="botoes_principais" unique_id=145509671]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dsa2e")
+text = "Iniciar"
+metadata/_edit_lock_ = true
+
+[node name="opcoes" type="Button" parent="botoes_principais" unique_id=2013525078]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dsa2e")
+text = "Opções"
+metadata/_edit_lock_ = true
+
+[node name="creditos" type="Button" parent="botoes_principais" unique_id=122916958]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dsa2e")
+text = "Créditos"
+metadata/_edit_lock_ = true
+
+[node name="sair" type="Button" parent="botoes_principais" unique_id=1501864952]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dsa2e")
+text = "Sair"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1397725600]
+stream = ExtResource("4_ystp5")
+autoplay = true
+bus = &"Music"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1305948305]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.0
+offset_top = -453.0
+offset_right = 330.0
+offset_bottom = -321.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="titulo" type="Label" parent="HBoxContainer" unique_id=415653588]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.972549, 1, 1)
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 154
+text = "SYSTEM FIXER"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1075652627]
+libraries/ = SubResource("AnimationLibrary_1qcsy")
+
+[node name="Window_Creditos" type="Window" parent="." unique_id=223783212]
+oversampling_override = 1.0
+initial_position = 3
+size = Vector2i(1875, 717)
+current_screen = 0
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("7_pphy0")
+theme_override_icons/close_pressed = ExtResource("8_wnitp")
+
+[node name="Base" type="NinePatchRect" parent="Window_Creditos" unique_id=1201125748]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ystp5")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="Window_Creditos" unique_id=1140203296]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("10_dsa2e")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="Window_Creditos/Cabecalho" unique_id=1939432457]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 85
+text = "Créditos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sair_janela" type="Button" parent="Window_Creditos/Cabecalho" unique_id=1307845663]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -37.0
+offset_right = -31.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_i0hcw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ijetr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oncfw")
+
+[node name="Panel" type="Panel" parent="Window_Creditos/Cabecalho" unique_id=1394836318]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 179.0
+offset_right = -23.0
+offset_bottom = 690.0
+grow_horizontal = 2
+
+[node name="creditos_dev" type="Label" parent="Window_Creditos/Cabecalho/Panel" unique_id=415018031]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 25.0
+offset_right = 889.0
+offset_bottom = 440.0
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 40
+text = "-Líder de Projeto, Game Designer, Pixel-Art-
+Giovanni Távora Pereira Negrão
+
+-Vice-Líder, Música, Pixel Art, Minigame Designer-
+Pedro Arthur Ramos Dutra da Silva
+
+-Pixel Art, Minigame Designer-
+Andryelly Silva de Castro
+
+-Modelagem 3D, Minigame Designer-
+Arthur Alexandre Alves"
+
+[node name="creditos_assets" type="Label" parent="Window_Creditos/Cabecalho/Panel" unique_id=1355309132]
+layout_mode = 0
+offset_left = 1007.0
+offset_top = 18.0
+offset_right = 1837.0
+offset_bottom = 435.0
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 45
+text = "                  -Assets Utilizados-
+Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
+\"Computer Icons Asset Pack\" - DampSquib (itch.io)
+\"Retro Windows GUI\" - Comp-3 Interactive (itch.io)
+\"Essential Game Music Pack\" - Bell Kalengar (itch.io)
+\"90s Desktop PC - PSX\" - visualdiscette (sketchfab.com)
+\"UI sound 2\" - Arnav_Geddada (pixabay.com)
+\"UI Close SFX\" - LitUpSubway (pixabay.com)
+\"026491_Pixel Song #8\" - Freesound Community
+\"Casual Click Pop UI 2\" - floraphonic (pixabay.com)
+\"Pixel UI Sound Effects Pack\" - JDSherbert (itch.io)"
+
+[node name="Window_Opcoes" type="Window" parent="." unique_id=1759926072]
+oversampling_override = 1.0
+initial_position = 3
+size = Vector2i(1100, 600)
+current_screen = 0
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("7_pphy0")
+theme_override_icons/close_pressed = ExtResource("8_wnitp")
+
+[node name="Base" type="NinePatchRect" parent="Window_Opcoes" unique_id=660723735]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ystp5")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="Window_Opcoes" unique_id=1886009067]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("10_dsa2e")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="Window_Opcoes/Cabecalho" unique_id=1497876299]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 85
+text = "Configurações"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sair_janela" type="Button" parent="Window_Opcoes/Cabecalho" unique_id=1574359575]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -37.0
+offset_right = -31.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_pphy0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wnitp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ystp5")
+
+[node name="Panel" type="Panel" parent="Window_Opcoes/Cabecalho" unique_id=1723183934]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 179.0
+offset_right = -23.0
+offset_bottom = 565.0
+grow_horizontal = 2
+
+[node name="volume_audio" type="HSlider" parent="Window_Opcoes/Cabecalho/Panel" unique_id=1047057911]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 47.0
+offset_right = -12.0
+offset_bottom = 135.5
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_dsa2e")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g28pe")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g28pe")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("6_wnitp")
+audio_bus_name = "Music"
+
+[node name="Label2" type="Label" parent="Window_Opcoes/Cabecalho/Panel" unique_id=1990633911]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 228.0
+offset_bottom = -296.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 95
+text = "Música:"
+horizontal_alignment = 1
+
+[node name="botao_tela_cheia" type="CheckButton" parent="Window_Opcoes/Cabecalho/Panel" unique_id=2072439346]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -4.0
+offset_top = 288.0
+offset_right = -592.5
+offset_bottom = 378.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 95
+text = "Tela cheia:"
+script = ExtResource("7_ystp5")
+
+[node name="Label3" type="Label" parent="Window_Opcoes/Cabecalho/Panel" unique_id=656806601]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 140.0
+offset_right = 513.0
+offset_bottom = -164.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 95
+text = "Efeitos Sonoros:"
+horizontal_alignment = 1
+
+[node name="volume_SFX" type="HSlider" parent="Window_Opcoes/Cabecalho/Panel" unique_id=708873477]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 207.0
+offset_right = -12.0
+offset_bottom = 295.5
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_dsa2e")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g28pe")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g28pe")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("6_wnitp")
+audio_bus_name = "SFX"
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=884032011]
+stream = ExtResource("12_wnitp")
+bus = &"SFX"
+
+[node name="Close" type="AudioStreamPlayer" parent="." unique_id=1058393772]
+stream = ExtResource("13_ystp5")
+bus = &"SFX"
+
+[node name="SomHover" type="AudioStreamPlayer" parent="." unique_id=1710892300]
+stream = ExtResource("15_g28pe")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="botoes_principais/novo_jogo" to="." method="_on_novo_jogo_mouse_entered"]
+[connection signal="pressed" from="botoes_principais/novo_jogo" to="." method="_on_novo_jogo_pressed"]
+[connection signal="mouse_entered" from="botoes_principais/opcoes" to="." method="_on_opcoes_mouse_entered"]
+[connection signal="pressed" from="botoes_principais/opcoes" to="." method="_on_opcoes_pressed"]
+[connection signal="mouse_entered" from="botoes_principais/creditos" to="." method="_on_creditos_mouse_entered"]
+[connection signal="pressed" from="botoes_principais/creditos" to="." method="_on_creditos_pressed"]
+[connection signal="mouse_entered" from="botoes_principais/sair" to="." method="_on_sair_mouse_entered"]
+[connection signal="pressed" from="botoes_principais/sair" to="." method="_on_sair_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Window_Creditos/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
+[connection signal="pressed" from="Window_Opcoes/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
+[connection signal="value_changed" from="Window_Opcoes/Cabecalho/Panel/volume_audio" to="Window_Opcoes/Cabecalho/Panel/volume_audio" method="_on_value_changed"]
+[connection signal="toggled" from="Window_Opcoes/Cabecalho/Panel/botao_tela_cheia" to="Window_Opcoes/Cabecalho/Panel/botao_tela_cheia" method="_on_toggled"]
+[connection signal="value_changed" from="Window_Opcoes/Cabecalho/Panel/volume_SFX" to="Window_Opcoes/Cabecalho/Panel/volume_SFX" method="_on_value_changed"]
